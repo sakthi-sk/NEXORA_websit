@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NEXORA DIGITAL - Futuristic Dark Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Dark theme matching NEXORA logo colors - Cyan to Blue to Purple to Magenta */
+    --background: 230 25% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 25% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyan Primary (matching logo top) */
+    --primary: 188 100% 48%;
+    --primary-foreground: 230 25% 5%;
+
+    /* Blue Secondary (matching logo middle) */
+    --secondary: 215 95% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted dark surfaces */
+    --muted: 230 20% 14%;
+    --muted-foreground: 220 15% 55%;
+
+    /* Magenta Accent (matching logo right side with pixels) */
+    --accent: 310 85% 52%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Purple (mid-gradient) */
+    --purple: 270 80% 58%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 18% 20%;
+    --input: 230 18% 20%;
+    --ring: 188 100% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients matching logo exactly */
+    --gradient-primary: linear-gradient(135deg, hsl(188 100% 48%) 0%, hsl(215 95% 55%) 35%, hsl(270 80% 58%) 65%, hsl(310 85% 52%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(188 100% 48% / 0.5) 0%, hsl(310 85% 52% / 0.5) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(230 25% 10%) 0%, hsl(230 25% 6%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(215 95% 55% / 0.25) 0%, hsl(270 80% 58% / 0.15) 35%, hsl(310 85% 52% / 0.08) 60%, transparent 80%);
+
+    /* Glass effect */
+    --glass-bg: hsl(230 25% 8% / 0.85);
+    --glass-border: hsl(230 18% 28% / 0.6);
+
+    /* Shadows */
+    --shadow-glow: 0 0 50px hsl(188 100% 48% / 0.4);
+    --shadow-card: 0 8px 40px hsl(0 0% 0% / 0.5);
+    --shadow-hover: 0 25px 70px hsl(188 100% 48% / 0.3);
+
+    /* Fonts */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 230 25% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 188 100% 48%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 230 20% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 18% 20%;
+    --sidebar-ring: 188 100% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Gradient text matching logo */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-hover:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Animated border gradient */
+  .border-gradient {
+    position: relative;
+    background: var(--gradient-card);
+    border-radius: var(--radius);
+  }
+
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: var(--radius);
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .border-gradient:hover::before {
+    opacity: 1;
+  }
+
+  /* Hero gradient overlay */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse glow animation */
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Grid background */
+  .grid-bg {
+    background-image: 
+      linear-gradient(to right, hsl(230 18% 22% / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(230 18% 22% / 0.4) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Noise texture overlay */
+  .noise {
+    position: relative;
+  }
+
+  .noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+  }
+
+  /* Pixel scatter animation matching logo */
+  .pixel-scatter {
+    position: relative;
+  }
+
+  .pixel-scatter::before,
+  .pixel-scatter::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: hsl(188 100% 48%);
+    border-radius: 2px;
+    animation: pixel-float 4s ease-in-out infinite;
+  }
+
+  .pixel-scatter::after {
+    width: 6px;
+    height: 6px;
+    background: hsl(310 85% 52%);
+    animation-delay: -2s;
+    top: 20%;
+    right: -20px;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 25px hsl(188 100% 48% / 0.35), 0 0 50px hsl(270 80% 58% / 0.2), 0 0 75px hsl(310 85% 52% / 0.15);
+  }
+  50% {
+    box-shadow: 0 0 50px hsl(188 100% 48% / 0.55), 0 0 80px hsl(270 80% 58% / 0.4), 0 0 100px hsl(310 85% 52% / 0.3);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pixel-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit 15s linear infinite reverse;
+}
