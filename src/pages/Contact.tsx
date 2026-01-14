@@ -31,26 +31,27 @@ const services = [
 const contactInfo = [
   {
     icon: MapPin,
-    title: 'Visit Us',
-    content: 'NEXORA DIGITAL PVT LTD\nTamil Nadu, India',
+    title: "Visit Us",
+    content:
+      "Postal Colony, Nemilichery, Chromepet, \nChennai, Nemilicherry, Tamil Nadu 600044",
   },
   {
     icon: Mail,
-    title: 'Email Us',
-    content: 'contact@nexoradigital.com',
-    href: 'mailto:contact@nexoradigital.com',
+    title: "Email Us",
+    content: "contact@nexoradigital.com",
+    href: "mailto:contact@nexoradigital.com",
   },
   {
     icon: Phone,
-    title: 'Call Us',
-    content: '+91 XXXXXXXXXX',
-    href: 'tel:+91XXXXXXXXXX',
+    title: "Call Us",
+    content: "+91 XXXXXXXXXX",
+    href: "tel:+91XXXXXXXXXX",
   },
   {
     icon: MessageCircle,
-    title: 'WhatsApp',
-    content: 'Chat with us instantly',
-    href: 'https://wa.me/91XXXXXXXXXX',
+    title: "WhatsApp",
+    content: "Chat with us instantly",
+    href: "https://wa.me/91XXXXXXXXXX",
   },
 ];
 

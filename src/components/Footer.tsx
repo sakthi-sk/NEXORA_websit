@@ -30,14 +30,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img 
-                src={nexoraLogo} 
-                alt="NEXORA DIGITAL PVT LTD" 
+              <img
+                src={nexoraLogo}
+                alt="NEXORA DIGITAL PVT LTD"
                 className="h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Transforming businesses through innovative digital solutions. We build websites, apps, and automation systems that drive real results.
+              Transforming businesses through innovative digital solutions. We
+              build websites, apps, and automation systems that drive real
+              results.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -55,7 +57,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-heading font-semibold text-lg mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -72,7 +76,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Services</h4>
+            <h4 className="font-heading font-semibold text-lg mb-4">
+              Services
+            </h4>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
@@ -89,13 +95,16 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Contact Us</h4>
+            <h4 className="font-heading font-semibold text-lg mb-4">
+              Contact Us
+            </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  NEXORA DIGITAL PVT LTD<br />
-                  Tamil Nadu, India
+                  Postal Colony, Nemilichery, Chromepet,
+                  <br /> Chennai, Nemilicherry,
+                  <br /> Tamil Nadu 600044
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -126,10 +135,16 @@ export default function Footer() {
             © 2026 NEXORA DIGITAL PVT LTD. All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="text-muted-foreground text-sm hover:text-primary transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+            <a
+              href="#"
+              className="text-muted-foreground text-sm hover:text-primary transition-colors"
+            >
               Terms of Service
             </a>
           </div>
